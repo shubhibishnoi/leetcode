@@ -14,6 +14,8 @@ explanation:
 -> to find the freq. of gaps,we will use hashmap or unordered map and 
    n-  max_gaps will give the result.
 */
+
+
 class Solution {
 public:
     int leastBricks(vector<vector<int>>& wall) {
@@ -31,3 +33,13 @@ public:
 for(auto it:gap) res=min(res,n-it.second); //min brick => n-max_gap.
       return res;  }};
 //if liked please upvote. :)
+
+
+
+
+
+
+
+
+
+
