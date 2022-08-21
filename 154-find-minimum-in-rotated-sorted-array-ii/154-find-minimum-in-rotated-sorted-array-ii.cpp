@@ -11,9 +11,13 @@ public:
             
             if(nums[m] > nums[h]) l =m+1;
             
-            else if(nums[m] < nums[h]) h = m;
-            
-            else h--; //both same  3 3 1 3
+            else if(nums[m] < nums[h]) {
+                h = m;
+                   cout<< h;
+            }
+         
+          //both same  3 3 1 3
+               else h--;
             
         }
         
