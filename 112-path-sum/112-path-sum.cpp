@@ -12,26 +12,26 @@
 class Solution {
 public:
     
-    bool helper(TreeNode* root, int ts, int cs){
-        if(!root) return false;
-        if(!root->left && !root->right){
-            if(cs+root->val == ts)
-            return true;
+    bool helper(TreeNode* r, int cs, int ts){
+        if(!r) return false;
+        
+        if(!r->left && !r->right) {
+            if(r->val + cs == ts){
+                return true;
+            }
         }
         
-        cs+=root->val;
+        cs+=r->val;
+        int ls= helper(r->left,cs,ts);
+        int rs= helper(r->right,cs,ts);
         
-     int ls =   helper(root->left, ts,cs);
-     int rs =   helper(root->right, ts, cs);
-        return ls|| rs;
+        return ls||rs;
         
     }
     
-    bool hasPathSum(TreeNode* root, int ts) {
-        if(!root) return false;
-        
-        int cs =0;
-        
-     return  helper(root,ts,cs );
+    bool hasPathSum(TreeNode* r, int ts) {
+        if(!r) return false;
+        int cs=0;
+      return  helper(r,cs,ts);
     }
 };
