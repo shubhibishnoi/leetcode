@@ -12,18 +12,18 @@
 class Solution {
 public:
     
-        
-    void sum_node(TreeNode* node, int& acc_sum){
-        if (node == NULL)  return;
-        sum_node(node->right,acc_sum);
-        node->val += acc_sum;
-        acc_sum = node->val;
-        sum_node(node->left, acc_sum);
+    void helper(TreeNode* root, int &currSum ){
+        if(!root) return;
+        helper(root->right , currSum);
+        root->val+=currSum;
+        currSum = root->val;
+        helper(root->left, currSum);
     }
+    
     TreeNode* bstToGst(TreeNode* root) {
-        int acc_sum = 0;
-        sum_node(root,acc_sum);
+        if(!root) return NULL;
+        int currSum =0;
+        helper(root, currSum );
         return root;
     }
-
 };
