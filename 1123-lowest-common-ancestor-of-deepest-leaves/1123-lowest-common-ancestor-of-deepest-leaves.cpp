@@ -21,8 +21,9 @@ public:
         if (!root)
             return NULL;
         
-        int right_depth = getDepth(root->right);
         int left_depth = getDepth(root->left);
+                int right_depth = getDepth(root->right);
+
         
         if (right_depth == left_depth)
             return root;
