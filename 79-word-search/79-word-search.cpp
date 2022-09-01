@@ -10,7 +10,7 @@ public:
         if(board[i][j] != word[index])
             return false;
         
-        board[i][j] = '*';
+        board[i][j] = '*'; ///marking it as visited 
         
         bool furtherSearch =  search(board, word, i+1, j, index+1) || // up
                               search(board, word, i-1, j, index+1) || // down
