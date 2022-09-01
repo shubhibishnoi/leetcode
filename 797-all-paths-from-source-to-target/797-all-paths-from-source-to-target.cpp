@@ -2,7 +2,7 @@ class Solution {
 public:
     
     void dfs(int src, vector<vector<int>>& g, vector<bool> &vis,   vector<int> &ans,  vector<vector<int>> &v){
-        if(src == g.size()-1){
+        if(src == g.size()-1){ // when we come to last
             ans.push_back(src);
             v.push_back(ans);
             
