@@ -16,7 +16,7 @@ public:
     }
     int goodNodes(TreeNode* root) {
         
-        int c=0,mx=INT_MIN;
+        int c=0, mx=INT_MIN;
         goody(root,mx,c);
         return c;
     }
