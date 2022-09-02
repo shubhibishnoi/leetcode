@@ -21,7 +21,8 @@ public:
         q.push(root);
 while(!q.empty())
         {
-            double sum=0,avg=0; int n=q.size();
+            double sum=0,avg=0;
+    int n=q.size();
             for(int i=0; i<n; i++)
             {
                TreeNode* node= q.front();
@@ -30,6 +31,7 @@ while(!q.empty())
                     q.push(node->left);
                  if(node->right)
                     q.push(node->right);
+                //
                 sum+=node->val;
             }
             avg=sum/n;
