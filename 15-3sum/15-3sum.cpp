@@ -20,7 +20,7 @@ public:
 
                  ans.push_back({nums[i], nums[j], nums[l]});
 
-                j++;
+               j++;
                  
                  while(j<l  && nums[j]==nums[j-1]) j++;
              }
