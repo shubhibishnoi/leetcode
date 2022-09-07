@@ -13,24 +13,19 @@ class Solution {
 public:
     string tree2str(TreeNode* root) {
         string ans ="" ;
-        
         if(!root) return ans;
+        
         ans+= to_string(root->val);
-            
-        if(root->left) { //left side check
+        
+        if(root->left) {
             ans+= '(' + tree2str(root->left) + ')' ;
         }
         
-        if(root->right){  //right side check
-           if (!root->left) ans += "()"; 
-			ans += "(" + tree2str(root->right) + ")";  //left side not present, but right side present
-
+        if(root->right){
+            if(!root->left) ans+= "()";
+            
+            ans+= '(' + tree2str(root->right) + ')';
         }
-        
         return ans;
     }
 };
-
-
-
-
