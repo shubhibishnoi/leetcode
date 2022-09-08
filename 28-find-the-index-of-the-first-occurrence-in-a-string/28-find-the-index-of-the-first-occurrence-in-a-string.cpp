@@ -12,6 +12,7 @@ int strStr(string haystack, string needle)
             { // when there is a match then increase both the pointers
                 i++;
                 j++;
+                
                 if(j==needle.size()) // if the whole pattern has been matched then return
                     return i-needle.size();  // the value by going needle size steps backwards from the current index in array
             }
