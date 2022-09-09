@@ -26,7 +26,7 @@ public:
     int maxPathSum(TreeNode* root) {
         if(!root) return ans;
        dfs(root);
-        if(ans == 0) ans = f;
+       if(ans == 0) ans = f;
         return ans;   
     }
 };
