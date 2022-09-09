@@ -30,7 +30,7 @@ else if(t.size()==0)
 return 0;
         
         int i=0, j=0;
-        while(i<s.size() && j<t.size() && (s.size()-i) <= (t.size()-j)){
+        while(i<s.size() && j<t.size()){
             if(s[i] == t[j]){
                 i++;
                 j++;
