@@ -10,22 +10,25 @@
  * };
  */
 class Solution {
-public:
-    
-    void helper(TreeNode* root, int l,int r, int &ans){
-        if(!root) return ;
-ans = max(ans,l);
-        ans = max(ans,r);
-        helper(root->left, 0,l+1, ans);
-        helper(root->right, r+1,0, ans);
+    int res = 0;
+
+    void solve(TreeNode *root, int curLen, int dir) {
+        if (!root) return;
+        res = max(res, curLen);
+        if (dir == 0) {
+            solve(root->right, curLen + 1, 1);
+            solve(root->left, 1, 0);
+        }
+        if (dir == 1) {
+            solve(root->left, curLen + 1, 0);
+            solve(root->right, 1, 1);
+        }
     }
-    
-    int longestZigZag(TreeNode* root) {
-        if(!root ) return 0;
-        int l=0;
-        int r=0;
-        int ans =0;
-       helper(root, l, r , ans);
-        return ans;
+
+public:
+    int longestZigZag(TreeNode *root) {
+        solve(root->left, 1, 0);
+        solve(root->right, 1, 1);
+        return res;
     }
 };
