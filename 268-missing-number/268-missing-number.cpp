@@ -1,24 +1,13 @@
 class Solution {
 public:
-   int missingNumber(vector<int>& nums) {
-        
-        int n = nums.size();
-        
-        vector<int> mp(n + 1, 0);
-        
-        for(int i = 0; i < n; i++)
-        {
-            mp[nums[i]]++;
+    int missingNumber(vector<int>& nums) { // function to return missing number
+        int result = nums.size(); // initialize result to size of vector
+        int i=0; // initialize i to 0
+        for(int num:nums){ // for each number in vector
+            result ^= num; // XOR result with number
+            result ^= i; // XOR result with i
+            i++; // increment i
         }
-        
-        for(int i = 0; i <= n; i++)
-        {
-            if(mp[i] == 0)
-            {
-                return i;
-            }
-        }
-        
-        return -1;
+        return result; // return result that is the missing number
     }
 };
