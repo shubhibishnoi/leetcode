@@ -4,8 +4,8 @@ public:
     bool dfs(vector<vector<int>>& graph, vector<int>& visited, int current, int end) {
         if(current == end)
             return true;
-        if(visited[current])
-            return false;
+       if(visited[current])
+           return false;
         
         visited[current] = 1;
         
