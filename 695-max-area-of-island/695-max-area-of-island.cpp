@@ -1,12 +1,12 @@
 class Solution {
 public:
-    int vis[50][50] = {0};
+  //  int vis[50][50] = {0};
     
     bool dfs(int i, int j, int n, int m, vector<vector<int>>& grid, int &cnt){
-        if(i<0 || j<0 || i>=n || j>=m || grid[i][j]==0 || vis[i][j]==1) return 0;
+        if(i<0 || j<0 || i>=n || j>=m || grid[i][j]==0) return 0;
         
         
-        vis[i][j]=1;
+        grid[i][j]=0;
         
         if(dfs(i+1, j, n,m,grid, cnt)) cnt++;
                 if(dfs(i, j+1, n,m,grid, cnt)) cnt++;
