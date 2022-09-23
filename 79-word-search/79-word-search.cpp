@@ -16,7 +16,7 @@ public:
                               search(board, word, i-1, j, index+1) || // down
                               search(board, word, i, j-1, index+1) || // left
                               search(board, word, i, j+1, index+1);   // right
-        board[i][j] = word[index];
+       board[i][j] = word[index];
         return furtherSearch;
     }
     
