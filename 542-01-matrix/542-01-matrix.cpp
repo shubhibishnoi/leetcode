@@ -16,9 +16,9 @@ public:
                     
                 }
                 
-                else{
-                    vis[i][j]=0;
-                }
+                // else{
+                //     vis[i][j]=0;
+                // }
                 
             }
         }
