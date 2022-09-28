@@ -30,6 +30,7 @@ class Solution {
           if (grid[i][j] == 1) cntFresh++;
         }
       }
+        
 
       int tm = 0;
       // delta row and delta column
@@ -39,7 +40,7 @@ class Solution {
 
       // bfs traversal (until the queue becomes empty)
       while (!q.empty()) {
-        int r = q.front().first.first;
+        int r = q.front().first.first;;
         int c = q.front().first.second;
         int t = q.front().second;
         tm = max(tm, t);
