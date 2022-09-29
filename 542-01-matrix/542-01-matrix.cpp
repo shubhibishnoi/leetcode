@@ -4,7 +4,7 @@ public:
         int n = mat.size();
         int m = mat[0].size();
         
-        vector<vector<int>> vis(n , vector<int>(m,0));
+       // vector<vector<int>> vis(n , vector<int>(m,0));
                 vector<vector<int>> dis(n , vector<int>(m,0));
         queue<pair<pair<int,int>,int>> q;
         
@@ -12,7 +12,8 @@ public:
             for(int j=0;j<m;j++){
                 if(mat[i][j]== 0){
                     q.push({{i,j},0});
-                    vis[i][j]=1;
+                    //vis[i][j]=1;
+                    mat[i][j] = 3;
                     
                 }
                 
@@ -34,8 +35,9 @@ public:
          for(int k=0;k<4;k++){
              int nx = x+delrow[k];
              int ny= y+delcol[k];
-             if(nx>=0&& nx<n && ny>=0 && ny<m&& vis[nx][ny] ==0){
-                 vis[nx][ny] = 1;
+             if(nx>=0&& nx<n && ny>=0 && ny<m&& mat[nx][ny] !=3){
+               //  vis[nx][ny] = 1;
+                 mat[nx][ny] = 3;
                  q.push({{nx,ny},step+1});
              }
              
