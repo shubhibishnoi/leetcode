@@ -6,11 +6,11 @@ public:
     
         if(index == word.size()) return true;
         if(i<0 || i>board.size()-1 || j<0 || j>board[0].size() - 1) return false;
+                if(board[i][j] != word[index]) return false;
+
+        if(board[i][j] == word[index])
+          board[i][j] = '*'; ///marking it as visited 
         
-        if(board[i][j] != word[index])
-            return false;
-        
-        board[i][j] = '*'; ///marking it as visited 
         
         bool furtherSearch =  search(board, word, i+1, j, index+1) || // up
                               search(board, word, i-1, j, index+1) || // down
